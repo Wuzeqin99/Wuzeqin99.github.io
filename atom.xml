@@ -10,7 +10,7 @@
   <id>https://wuzeqin99.github.io/</id>
   
   <author>
-    <name>wuzeqin</name>
+    <name>Qin</name>
     
   </author>
   
@@ -44,11 +44,11 @@
   </entry>
   
   <entry>
-    <title>正经的第一条博客</title>
-    <link href="https://wuzeqin99.github.io/2019/12/10/%E6%AD%A3%E7%BB%8F%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://wuzeqin99.github.io/2019/12/10/%E6%AD%A3%E7%BB%8F%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/</id>
+    <title>Hexo搭载blog</title>
+    <link href="https://wuzeqin99.github.io/2019/12/10/Hexo%E6%90%AD%E8%BD%BD%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://wuzeqin99.github.io/2019/12/10/Hexo%E6%90%AD%E8%BD%BD%E5%8D%9A%E5%AE%A2/</id>
     <published>2019-12-10T05:00:00.000Z</published>
-    <updated>2019-12-20T02:30:19.368Z</updated>
+    <updated>2019-12-20T03:15:50.585Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么-你也想搞一个自己的博客"><a href="#什么-你也想搞一个自己的博客" class="headerlink" title="什么 你也想搞一个自己的博客"></a>什么 你也想搞一个自己的博客</h1><p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575963212091&di=97c912ba9ca371d118e1bc45b0a1076f&imgtype=jpg&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D6c3ac5534b086e066aa83f4332097b5a%2Fc620c61fbe096b63228707320b338744eaf8ac99.jpg" alt=""></p><p><strong>follow me</strong></p><ol><li><p><strong><em>下载nodejs</em></strong><br>(nodejs)(<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>)<br><img src="/images/1.png" alt=""><br><img src="/images/2.png" alt="一路 next"></p></li><li><p><strong><em>下载git</em></strong><br>(百度网盘)(<a href="https://pan.baidu.com/s/1PWKp3opV16zvSHHKve_x7A" target="_blank" rel="noopener">https://pan.baidu.com/s/1PWKp3opV16zvSHHKve_x7A</a>)<br>提取码：seqq<br>ps：也可官网下载 只是速度太慢(官网)(<a href="https://git-scm.com" target="_blank" rel="noopener">https://git-scm.com</a>)</p></li><li><p><strong><em>github</em></strong><br>(<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>)<br>如果没有账号注册一个<br><img src="/images/3.png" alt="注册成功后"><br><img src="/images/4.png" alt="创建一个仓库"></p></li></ol><p>*<em>注意：username一定要是自己的GitHub的用户名 *</em></p><p>4.<strong><em>githubSSH的配置</em></strong><br>打开下载的git Bash<br><img src="/images/5.png" alt=""><br>输入<br>       <code>ssh-keygen -t rsa -C &quot;Github的注册邮箱地址&quot;</code><br>一直空格<br>之后 在磁盘中寻找 id_rsa.pub 文件 用记事本打开 复制里面的ssh<br>打开GitHub，登入自己的账号然后选择<br><img src="/images/6.png" alt=""><br>title栏填写<em>hojuntech</em><br>下面的粘贴复制的ssh</p><p>5.建立文件夹和本地网站<br>建一个文件夹<br>用win+r打开运行，输入cmd打开<img src="/images/7.png" alt=""><br>进入到新建的文件夹目录下 如输入<code>d:</code>进入d盘 输入 <code>cd blog</code>进入blog文件夹<br>之后输入<code>npm install hexo-cli -g</code> 等待下载。。。。 如果卡了 建议重开<br>然后输入<code>hexo init 文件夹名称</code> Waiting….<br>安装：输入<code>npm install</code><br>运行！输入<code>hexo s -p 4000</code> 你就能在浏览器上输入localhost：4000访问新建的blog了</p><p>6.发布<br>打开博客文件夹下的_config.yml 建议用sumline打开（不知道的怎么用的可以上b站或者用notepad++也行）<br>拉到最后修改：<br>    <img src="/images/8.png" alt=""><br>这里的用户名要改成自己的<br>再拉到第二行 修改url如图<br>    <img src="/images/9.png" alt=""><br>这里的用户名也要改</p><p>7.起飞！！！<br>在cmd命令中输入<code>hexo g -d</code> 等待部署完后 即可访问 username.github.io来看自己的博客辣</p><p>8.创作！<br>打开博客的本地文件夹打开source中的_post建立md文件，再用markdown的格式写文章<br>完成后用cmd运行<code>hexo g -d</code>命令就是自己的博文了！</p>]]></content>
     
@@ -92,29 +92,6 @@
     
     
       <category term="Hexo" scheme="https://wuzeqin99.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一条博客</title>
-    <link href="https://wuzeqin99.github.io/2019/12/09/%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://wuzeqin99.github.io/2019/12/09/%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/</id>
-    <published>2019-12-09T10:14:44.000Z</published>
-    <updated>2019-12-11T04:41:45.319Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>这是一个测试</strong><br><code>这是一个测试</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">这是一个测试</span></pre></td></tr></table></figure><p>(<code>) for i in range(10)    #这是一个测试    print(&#39;这是一个测试&#39;)(</code>)</p><p><code>这是一个测试这是一个测试</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;这是一个测试&lt;/strong&gt;&lt;br&gt;&lt;code&gt;这是一个测试&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
