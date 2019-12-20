@@ -48,17 +48,17 @@
     <link href="https://wuzeqin99.github.io/2019/12/20/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/"/>
     <id>https://wuzeqin99.github.io/2019/12/20/%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</id>
     <published>2019-12-20T05:00:00.000Z</published>
-    <updated>2019-12-20T03:35:13.883Z</updated>
+    <updated>2019-12-20T03:36:51.806Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>最大公约数</strong> <code>int gcd(int a,int b){return !b?a:gcd(b,a%b);}</code></p><p><strong>排序</strong><br>(<code>)        void sort(int *a, int n)//a为数组地址，l为数组长度。    {        int i, j;        int v;        //排序主体        for(i = 0; i &lt; n- 1; i ++)            for(j = i+1; j &lt; n; j ++)            {                if(a[i] &gt; a[j])//如前面的比后面的大，则交换。                {                    v = a[i];                    a[i] = a[j];                    a[j] = v;                }        }        return;    }(</code>)</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>最大公约数</strong> <code>int gcd(int a,int b){return !b?a:gcd(b,a%b);}</code></p><p><strong>排序</strong> </p><pre><code>        void sort(int *a, int n)//a为数组地址，l为数组长度。    {        int i, j;        int v;        //排序主体        for(i = 0; i &lt; n- 1; i ++)            for(j = i+1; j &lt; n; j ++)            {                if(a[i] &gt; a[j])//如前面的比后面的大，则交换。                {                    v = a[i];                    a[i] = a[j];                    a[j] = v;                }        }        return;    }</code></pre>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;&lt;strong&gt;最大公约数&lt;/strong&gt; &lt;code&gt;int gcd(int a,int b){return !b?a:gcd(b,a%b);}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;排序&lt;/strong&gt;&lt;br&gt;(&lt;code&gt;)
-        void sor
+&lt;p&gt;&lt;strong&gt;排序&lt;/strong&gt; &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;        void
       
     
     </summary>
