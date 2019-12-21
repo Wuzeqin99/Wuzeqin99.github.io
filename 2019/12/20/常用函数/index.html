@@ -7,9 +7,9 @@
     <meta name="keywords" content="常用简单函数(c), 小白的博客">
     <meta name="description" content="最大公约数 int gcd(int a,int b){return !b?a:gcd(b,a%b);}
 排序 
-        void sort(int *a, int n)//a为数组地址，l为数组长度。
+    void sort(int *a, int n)//a为数组地址，l为数组长度。
     {
-        i">
+        int i">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -431,7 +431,7 @@
             <div id="articleContent">
                 <p><strong>最大公约数</strong> <code>int gcd(int a,int b){return !b?a:gcd(b,a%b);}</code></p>
 <p><strong>排序</strong> </p>
-<pre><code>        void sort(int *a, int n)//a为数组地址，l为数组长度。
+<pre><code>    void sort(int *a, int n)//a为数组地址，l为数组长度。
     {
         int i, j;
         int v;
@@ -447,6 +447,174 @@
                 }
         }
         return;
+    }</code></pre><p><strong>字符串的反转</strong></p>
+<pre><code>    void reverse(char *a)
+    {
+        int n,i;
+        char temp;
+        cin &gt;&gt; a;
+        n=strlen(a);
+        for(i=0;i&lt;n/2;i++)
+        {
+        temp=a[i];
+        a[i]=a[n-i-1];
+        a[n-i-1]=temp;
+        }
+    }</code></pre><p><strong>简单计算器</strong></p>
+<pre><code>    #include&lt;stdio.h&gt;
+    int main ()
+    {
+        int a,b,i,j;
+        char c,p=&#39;y&#39;;
+        while(p==&#39;y&#39; || p==&#39;Y&#39;)
+    {
+
+        scanf(&quot;%d %c %d&quot;,&amp;a,&amp;c,&amp;b);
+
+        if(c==&#39;+&#39;) i=1;
+        if(c==&#39;-&#39;) i=2;
+        if(c==&#39;*&#39;) i=3;
+        if(c==&#39;/&#39;) i=4;
+        switch(i)
+        {
+            case 1:
+                    printf(&quot;%.2f + %.2f = %.2f\n&quot;, (float)a, (float)b,(float)(a+b));
+                    break;
+            case 2:
+                    printf(&quot;%.2f - %.2f = %.2f\n&quot;, (float)a, (float)b,(float)(a-b));
+                    break;
+            case 3:
+                    printf(&quot;%.2f * %.2f = %.2f\n&quot;, (float)a, (float)b,(float)(a*b));
+                    break;
+            case 4:
+                if(b==0)
+                {
+                    printf(&quot;error\n&quot;);
+                    break;
+                }
+                    printf(&quot;%.2f / %.2f = %.2f\n&quot;, (float)a, (float)b,(float)(a)/(float)(b));
+                    break;
+            default:
+                printf(&quot;error\n&quot;);
+                break;
+        }
+        getchar();
+        p=getchar();
+
+    }
+    }</code></pre><p><strong>字符串的拷贝</strong></p>
+<pre><code>    void my_strcpy(char * destination,char * source)
+    {
+        if(destination==NULL||source==NULL){
+            printf(&quot;error\n&quot;);
+            return;        
+        }
+        int len=strlen(source);
+        for(int i=0;i&lt;len;++i)
+        if(source[i]==&#39; &#39;) len=i;
+        for(int i=0;i&lt;=len;++i)
+        destination[i]=source[i];
+        return;
+    }</code></pre><p><strong>字符串的连接</strong></p>
+<pre><code>    void my_strcat(char * destination,const char * source)
+    {
+        int i=0,n=0,m=0;
+        if(destination==NULL || source==NULL)
+        {
+            printf(&quot;error&quot;);
+            return;
+        }
+
+        while(*(destination+i)!=&#39; &#39;)
+            {
+                i++;
+                n++;
+            }
+        i=0;
+        while(*(source+i)!=&#39; &#39;)
+        {
+            i++;
+            m++;
+        }
+        for(i=0;i&lt;m;i++)
+        {
+            *(destination+n+i)=*(source+i);
+            *(destination+n+m)=&#39; &#39;;
+        }
+    }</code></pre><p><strong>字符串的内部增加字符串</strong></p>
+<pre><code>    void insert(char * s1,char * s2, int n)
+    {
+        char s4[3000];
+        char *s3 = s4;
+        int i=0,n_s2=0,n_s1=0,k=0,j=0;
+        if(s1==NULL || s2==NULL )
+        {
+            printf(&quot;error&quot;);
+            return;
+        }
+        while(*(s1+i)!=&#39; &#39;)
+        {
+            i++;
+            n_s1++;
+        }
+        if(n&gt;n_s1) 
+        {
+            printf(&quot;error&quot;);
+            return;
+        }
+        i=0;
+        while(*(s2+i)!=&#39; &#39;)
+        {
+            i++;
+            n_s2++;
+        }
+        for (int i = 0; i&lt;n; i++) 
+        { 
+            j++; 
+        }
+        for (int i= 0; i&lt;n_s1; i++)
+        { 
+            s4[k++] = s1[i];
+        }
+
+        for (int i = 0; i&lt;n_s2; i++)
+            s1[j++] = s2[i];
+
+        for(int i=n;i&lt;n_s1;i++)
+            s1[j++]=s4[i];
+
+        s1[j] = &#39; &#39;;
+
+    }</code></pre><p><strong>字符串的内部删除字符串</strong></p>
+<pre><code>    void del(char * s,int n,int len)
+    {
+        char s4[3000];
+        int i=0,m=0,p=0,len_s=0;
+        if(s==NULL || n&lt;0)
+        {
+            printf(&quot;error&quot;);
+            return;
+        }
+
+        while(*(s+i)!=&#39; &#39;)
+        {
+            i++;
+            len_s++;
+        }
+        if(n&gt;len_s-1 || len&gt;len_s || (n+len)&gt;len_s || len&lt;0)
+        {
+            printf(&quot;error&quot;);
+            return;
+        }
+        if(n==0 &amp;&amp; len==len_s)
+        {
+            *s=&#39; &#39;;
+            return;
+        }
+        for(i=n;i&lt;len_s-len;i++)
+            s[i]=s[i+len];
+        s[len_s-len]=&#39; &#39;;
+
     }</code></pre><p><strong><em>实时更新</em></strong></p>
 
             </div>
