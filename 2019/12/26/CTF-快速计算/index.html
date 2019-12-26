@@ -4,11 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CTF-Cookie的伪造, 小白的博客">
+    <meta name="keywords" content="CTF-快速计算, 小白的博客">
     <meta name="description" content="题目
-burpsuite抓包  
-发现set-cookie 故添加http头 
-">
+要求我们在两秒钟内得出答案人生苦短，我用python
+#!coding:utf-8
+import requests
+import re
+url = &amp;quot;http://lab1.xseclab.com/xss2_0d557e6d">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +18,7 @@ burpsuite抓包
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>CTF-Cookie的伪造 | 小白的博客</title>
+    <title>CTF-快速计算 | 小白的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -290,13 +292,13 @@ burpsuite抓包
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        CTF-Cookie的伪造
+                        CTF-快速计算
                     </div>
                 </div>
             </div>
@@ -428,9 +430,24 @@ burpsuite抓包
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="http://lab1.xseclab.com/base9_ab629d778e3a29540dfd60f2e548a5eb/index.php" target="_blank" rel="noopener">题目</a></p>
-<p>burpsuite抓包  <img src="/images/16.png" alt=""></p>
-<p>发现set-cookie 故添加http头 <img src="/images/17.png" alt=""></p>
+                <p><a href="http://lab1.xseclab.com/xss2_0d557e6d2a4ac08b749b61473a075be1/index.php" target="_blank" rel="noopener">题目</a></p>
+<p>要求我们在两秒钟内得出答案<br>人生苦短，我用python</p>
+<pre><code>#!coding:utf-8
+import requests
+import re
+url = &quot;http://lab1.xseclab.com/xss2_0d557e6d2a4ac08b749b61473a075be1/index.php&quot;
+s=requests.session()
+html=s.get(url)
+html.encoding=&#39;utf-8&#39;
+#print(&#39;\n%s&#39;% html.text)
+res=html.text
+#print(html.text)
+n=re.findall(&quot;(\d.*)(=&lt;i)&quot;,res)
+#print(n[0])
+p=n
+answer=eval(p[0][0])
+html=s.post(url,data={&quot;v&quot;:answer})
+print(html.text)</code></pre><p>注意输入的是“password”的名字是“v”</p>
 
             </div>
             <hr/>
@@ -571,7 +588,7 @@ burpsuite抓包
                     </span>
                     <a href="https://wuzeqin99.github.io" class="b-link-green">小白的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/12/26/CTF-Cookie/" class="b-link-green">CTF-Cookie的伪造</a>
+                    <a href="/2019/12/26/CTF-%E5%BF%AB%E9%80%9F%E8%AE%A1%E7%AE%97/" class="b-link-green">CTF-快速计算</a>
                 </p>
             </div>
         </div>
@@ -596,18 +613,19 @@ burpsuite抓包
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/26/CTF--Accept-Language/">
+                <a href="/2019/12/26/CTF-Cookie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="CTF--Accept-Language的伪造">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="CTF-Cookie的伪造">
                         
-                        <span class="card-title">CTF--Accept-Language的伪造</span>
+                        <span class="card-title">CTF-Cookie的伪造</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">题目
-用burpsuite抓包更改Accept-Language 
+burpsuite抓包  
+发现set-cookie 故添加http头 
 </div>
                     <div class="publish-info">
                         <span class="publish-date">
@@ -643,32 +661,28 @@ burpsuite抓包
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/26/CTF-%E5%BF%AB%E9%80%9F%E8%AE%A1%E7%AE%97/">
+                <a href="/2019/12/20/%E4%B8%80%E9%81%93%E7%AE%80%E5%8D%95ACM/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="CTF-快速计算">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="一道简单的ACM">
                         
-                        <span class="card-title">CTF-快速计算</span>
+                        <span class="card-title">一道简单的ACM</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">题目
-要求我们在两秒钟内得出答案人生苦短，我用python
-#!coding:utf-8
-import requests
-import re
-url = &quot;http://lab1.xseclab.com/xss2_0d557e6d</div>
+                    <div class="summary">#题目
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CTF/" class="post-category" target="_blank">
-                                    CTF
+                            <a href="/categories/ACM/" class="post-category" target="_blank">
+                                    ACM
                                 </a>
                             
                             
@@ -678,8 +692,8 @@ url = &quot;http://lab1.xseclab.com/xss2_0d557e6d</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CTF/" target="_blank">
-                        <span class="chip bg-color">CTF</span>
+                    <a href="/tags/ACM/" target="_blank">
+                        <span class="chip bg-color">ACM</span>
                     </a>
                     
                 </div>
