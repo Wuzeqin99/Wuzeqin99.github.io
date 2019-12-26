@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wuzeqin99.github.io/"/>
-  <updated>2019-12-20T02:47:00.869Z</updated>
+  <updated>2019-12-26T11:00:47.714Z</updated>
   <id>https://wuzeqin99.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CTF-PHP</title>
+    <link href="https://wuzeqin99.github.io/2019/12/26/CTF--User-Agent%E7%9A%84%E4%BC%AA%E9%80%A0/"/>
+    <id>https://wuzeqin99.github.io/2019/12/26/CTF--User-Agent%E7%9A%84%E4%BC%AA%E9%80%A0/</id>
+    <published>2019-12-26T10:14:44.000Z</published>
+    <updated>2019-12-26T11:00:47.714Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://lab1.xseclab.com/base6_6082c908819e105c378eb93b6631c4d3/index.php" target="_blank" rel="noopener">题目</a></p><p>用burpsuite抓包  <img src="/images/13.png" alt=""></p><p>添加User-Agent的伪造 <img src="/images/14.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://lab1.xseclab.com/base6_6082c908819e105c378eb93b6631c4d3/index.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用burpsuit
+      
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="https://wuzeqin99.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF--User-Agent的伪造" scheme="https://wuzeqin99.github.io/tags/CTF-User-Agent%E7%9A%84%E4%BC%AA%E9%80%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>一道简单的ACM</title>
@@ -147,6 +174,33 @@
     
     
       <category term="CTF-PHP" scheme="https://wuzeqin99.github.io/tags/CTF-PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTF-PHP</title>
+    <link href="https://wuzeqin99.github.io/2019/12/09/CTF-%E5%BA%B7%E6%BA%90%E7%A0%81/"/>
+    <id>https://wuzeqin99.github.io/2019/12/09/CTF-%E5%BA%B7%E6%BA%90%E7%A0%81/</id>
+    <published>2019-12-09T10:14:44.000Z</published>
+    <updated>2019-12-26T10:47:58.307Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://lab1.xseclab.com/base1_4a4d993ed7bd7d467b27af52d2aaa800/index.php" target="_blank" rel="noopener">题目</a></p><p>F12 康源码</p><p><img src="/imges/12.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://lab1.xseclab.com/base1_4a4d993ed7bd7d467b27af52d2aaa800/index.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;F12 康源码&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="CTF" scheme="https://wuzeqin99.github.io/categories/CTF/"/>
+    
+    
+      <category term="CTF-康源码" scheme="https://wuzeqin99.github.io/tags/CTF-%E5%BA%B7%E6%BA%90%E7%A0%81/"/>
     
   </entry>
   
