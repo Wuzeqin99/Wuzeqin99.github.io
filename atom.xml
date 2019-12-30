@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wuzeqin99.github.io/"/>
-  <updated>2019-12-26T11:09:17.319Z</updated>
+  <updated>2019-12-30T14:03:40.350Z</updated>
   <id>https://wuzeqin99.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python爬虫</title>
+    <link href="https://wuzeqin99.github.io/2019/12/30/python%E7%88%AC%E8%99%AB1/"/>
+    <id>https://wuzeqin99.github.io/2019/12/30/python%E7%88%AC%E8%99%AB1/</id>
+    <published>2019-12-30T10:14:44.000Z</published>
+    <updated>2019-12-30T14:03:40.350Z</updated>
+    
+    <content type="html"><![CDATA[<p>爬取<a href="https://movie.douban.com/top250" target="_blank" rel="noopener">豆瓣电影top250</a>的页面上的电影名称</p><pre><code>import requestsimport bs4url=&quot;https://movie.douban.com/top250&quot;hea = {&#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36&#39;}res=requests.get(url,headers=hea)soup=bs4.BeautifulSoup(res.text,&quot;html.parser&quot;)targets=soup.find_all(&quot;div&quot;,class_=&quot;hd&quot;)for each in targets:    print(each.a.span.text)</code></pre><p>代码取自小甲鱼视频，但是视频中没有对header头修改，如果照搬原代码会无法爬取<br>添加<code>hea = {&#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36&#39;}</code><br>让目标网站误以为本程序是浏览器，并非爬虫。</p><p><a href="https://ilovefishc.com" target="_blank" rel="noopener">小甲鱼的python视频</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;爬取&lt;a href=&quot;https://movie.douban.com/top250&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;豆瓣电影top250&lt;/a&gt;的页面上的电影名称&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import requests
+import 
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://wuzeqin99.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://wuzeqin99.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>CTF--User-Agent的伪造</title>

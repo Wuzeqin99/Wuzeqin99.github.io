@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CTF--User-Agent的伪造, 小白的博客">
-    <meta name="description" content="题目
-用burpsuite抓包  
-添加User-Agent的伪造 
-">
+    <meta name="keywords" content="python爬虫, 小白的博客">
+    <meta name="description" content="爬取豆瓣电影top250的页面上的电影名称
+import requests
+import bs4
+url=&amp;quot;https://movie.douban.com/top250&amp;quot;
+hea = {&amp;#39;User-Agent&amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>CTF--User-Agent的伪造 | 小白的博客</title>
+    <title>python爬虫 | 小白的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -290,13 +291,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        CTF--User-Agent的伪造
+                        python爬虫
                     </div>
                 </div>
             </div>
@@ -388,8 +389,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CTF/" target="_blank">
-                                <span class="chip bg-color">CTF</span>
+                            <a href="/tags/python/" target="_blank">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -400,8 +401,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF/" class="post-category" target="_blank">
-                                CTF
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                python
                             </a>
                         
                     </div>
@@ -412,7 +413,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-26
+                    2019-12-30
                 </div>
 
                 
@@ -428,9 +429,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="http://lab1.xseclab.com/base6_6082c908819e105c378eb93b6631c4d3/index.php" target="_blank" rel="noopener">题目</a></p>
-<p>用burpsuite抓包  <img src="/images/13.png" alt=""></p>
-<p>添加User-Agent的伪造 <img src="/images/14.png" alt=""></p>
+                <p>爬取<a href="https://movie.douban.com/top250" target="_blank" rel="noopener">豆瓣电影top250</a>的页面上的电影名称</p>
+<pre><code>import requests
+import bs4
+url=&quot;https://movie.douban.com/top250&quot;
+hea = {&#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36&#39;}
+res=requests.get(url,headers=hea)
+soup=bs4.BeautifulSoup(res.text,&quot;html.parser&quot;)
+targets=soup.find_all(&quot;div&quot;,class_=&quot;hd&quot;)
+for each in targets:
+    print(each.a.span.text)</code></pre><p>代码取自小甲鱼视频，但是视频中没有对header头修改，如果照搬原代码会无法爬取<br>添加<code>hea = {&#39;User-Agent&#39;:&#39;Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36&#39;}</code><br>让目标网站误以为本程序是浏览器，并非爬虫。</p>
+<p><a href="https://ilovefishc.com" target="_blank" rel="noopener">小甲鱼的python视频</a></p>
 
             </div>
             <hr/>
@@ -571,7 +580,7 @@
                     </span>
                     <a href="https://wuzeqin99.github.io" class="b-link-green">小白的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/12/26/CTF--User-Agent%E7%9A%84%E4%BC%AA%E9%80%A0/" class="b-link-green">CTF--User-Agent的伪造</a>
+                    <a href="/2019/12/30/python%E7%88%AC%E8%99%AB1/" class="b-link-green">python爬虫</a>
                 </p>
             </div>
         </div>
@@ -592,9 +601,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/12/30/python%E7%88%AC%E8%99%AB1/">
                     <div class="card-image">
@@ -612,9 +622,9 @@ import bs4
 url=&quot;https://movie.douban.com/top250&quot;
 hea = {&#39;User-Agent&</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -627,6 +637,7 @@ hea = {&#39;User-Agent&</div>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -645,18 +656,19 @@ hea = {&#39;User-Agent&</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/26/CTF--Accept-Language/">
+                <a href="/2019/12/26/CTF--User-Agent%E7%9A%84%E4%BC%AA%E9%80%A0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="CTF--Accept-Language的伪造">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="CTF--User-Agent的伪造">
                         
-                        <span class="card-title">CTF--Accept-Language的伪造</span>
+                        <span class="card-title">CTF--User-Agent的伪造</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">题目
-用burpsuite抓包更改Accept-Language 
+用burpsuite抓包  
+添加User-Agent的伪造 
 </div>
                     <div class="publish-info">
                             <span class="publish-date">
